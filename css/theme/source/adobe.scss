@@ -23,11 +23,178 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 
 // Background generator
 @mixin bodyBackground() {
-	@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+	@include radial-gradient( rgba(0,30,32,1), rgba(0,90,95,1) );
 }
-
-
 
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
+
+.vignette45deg .reveal .state-background{
+  background-image: -webkit-linear-gradient(225deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1));
+  background-size: cover;
+}
+
+.reveal pre{
+	box-shadow: none;
+	display: inline-block;
+}
+
+.reveal .slides section .fragment.highlight{
+	opacity: 1;
+}
+
+.reveal .slides section .fragment.highlight.current-fragment {
+	color: #444;
+	background: rgba(255, 255, 127, 1);
+	// font-size: 1.5em;
+}
+
+.reveal .demo {
+	p{
+		font-size: 0.6em;
+		line-height: 1.6;
+	}
+}
+
+.reveal .list{
+	margin: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	& li{
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.reveal .list--horizontal{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.reveal .list--start{
+	justify-content: flex-start;
+}
+
+.muted{
+	-webkit-filter: grayscale(1) brightness(1.5);
+	filter: grayscale(1) brightness(1.5);
+}
+
+.demo--graphic{
+	fill: orange;
+}
+
+.demo--shape-left{
+	.shape{
+		float: left;
+	}
+
+	p{
+		text-align: left;
+	}
+}
+
+.demo--shape-right{
+	.shape{
+		float: right;
+	}
+
+	p{
+		text-align: right;
+	}
+}
+
+.demo--shape-circle{
+	.shape{
+		width: 250px;
+		height: 250px;
+		margin: 20px;
+		shape-outside: circle(50% at center center);
+	}
+}
+
+.demo--shape-ellipse{
+	.shape{
+		width: 300px;
+		height: 400px;
+		shape-outside: ellipse(50% 50% at center center);
+	}
+}
+
+.demo--shape-polygon{
+	.shape{
+		width: 400px;
+		height: 400px;
+		background: url("../../resources/icon_octopus.svg") center center no-repeat;
+		background-size: contain;
+		shape-margin: 6px;
+		shape-outside: polygon(nonzero, 111px 239px, 23px 222px, 4px 175px, 72px 95px, 120px 63px, 164px 87px, 197px 151px, 220px 90px, 279px 87px, 268px 149px, 330px 154px, 387px 181px, 390px 207px, 363px 242px, 346px 301px, 403px 290px, 371px 320px, 202px 330px, 59px 336px, 46px 318px, 53px 295px);
+	}
+}
+
+.demo--shape-image{
+	.shape{
+		width: 500px;
+		height: 500px;
+		margin: 1em;
+		shape-margin: 1em;
+		shape-outside: url("../../resources/espresso.png");
+		shape-image-threshold: 0.5;
+	}
+}
+
+.shapes-illustration{
+  div{
+    background: rgb(255, 185, 0);
+    float: left;
+    margin: 0 1em 1em 0;
+
+    &:nth-child(1){
+      width: 6em;
+      height: 4em;
+    }
+
+    &:nth-child(2){
+      width: 4em;
+      height: 6em;
+    }
+
+    &:nth-child(3){
+      width: 6em;
+      height: 6em;
+    }
+
+    &:nth-child(4){
+      width: 3em;
+      height: 3em;
+    }
+
+    &:nth-child(5){
+      width: 1em;
+      height: 1em;
+    }
+
+    &:nth-child(6){
+      width: 6em;
+      height: 4em;
+      border-radius: 1em;
+      clear: left;
+    }
+
+    &:nth-child(7){
+      width: 4em;
+      height: 6em;
+      border-radius: 1em;
+    }
+
+    &:nth-child(8){
+      width: 6em;
+      height: 6em;
+      border-radius: 50%;
+    }
+  }
+}
