@@ -2,29 +2,29 @@
 // overridden by the super-theme
 
 // Background of the presentation
-$backgroundColor: #2b2b2b;
+$backgroundColor: rgba(46, 61, 75, 1);
 
 // Primary/body text
-$mainFont: 'Lato', sans-serif;
+$mainFont: 'Open Sans', sans-serif;
 $mainFontSize: 36px;
 $mainColor: #eee;
 
 // Headings
 $headingMargin: 0 0 20px 0;
-$headingFont: 'League Gothic', Impact, sans-serif;
-$headingColor: #eee;
+$headingFont: 'Open Sans', Impact, sans-serif;;
+$headingColor: #fff;
 $headingLineHeight: 0.9em;
-$headingLetterSpacing: 0.02em;
+$headingLetterSpacing: 0.01em;
 $headingTextTransform: uppercase;
-$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
-$heading1TextShadow: $headingTextShadow;
+$headingTextShadow: none;
+$heading1TextShadow: none;
 
 // Links and actions
 $linkColor: #13DAEC;
 $linkColorHover: lighten( $linkColor, 20% );
 
 // Text selection
-$selectionBackgroundColor: #FF5E99;
+$selectionBackgroundColor: pink;
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden
