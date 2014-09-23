@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic|Source+Code+Pro:600,700);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../lib/font/league_gothic-webfont.eot");
@@ -132,19 +132,17 @@ body {
 
 .reveal pre {
   box-shadow: none;
-  display: inline-block; }
-
+  display: inline-block;
+  font-family: "Source Code Pro", monotype;
+  font-weight: 500; }
 .reveal .slides section .fragment.highlight {
   opacity: 1; }
-
 .reveal .slides section .fragment.highlight.current-fragment {
   color: #444;
   background: #ffff7f; }
-
 .reveal .demo p {
   font-size: 0.6em;
   line-height: 1.6; }
-
 .reveal .list {
   margin: 0;
   list-style: none;
@@ -153,14 +151,13 @@ body {
   .reveal .list li {
     padding: 0;
     margin: 0; }
-
 .reveal .list--horizontal {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between; }
-
-.reveal .list--start {
-  justify-content: flex-start; }
+.reveal .monotype {
+  font-family: "Source Code Pro", monotype;
+  font-weight: 700; }
 
 .muted {
   -webkit-filter: grayscale(1) brightness(1.5);
@@ -238,3 +235,20 @@ body {
     width: 6em;
     height: 6em;
     border-radius: 50%; }
+
+.clip-surface {
+  background: url("../../resources/pattern-science.png") left top;
+  height: 500px; }
+
+.clip--circle {
+  -webkit-clip-path: circle(200px at 50% 50%);
+  -moz-clip-path: circle(200px at 50% 50%); }
+
+.clip--ellipse {
+  -webkit-clip-path: ellipse(150px 250px at 50% 50%);
+  -moz-clip-path: ellipse(150px 250px at 50% 50%); }
+
+.clip--polygon {
+  background: url("../../resources/pattern-pentagon.png");
+  -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
+  -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px); }

@@ -438,39 +438,37 @@
 				</section>
 
 				<section>
-					// circle() function demonstration
+					<div class="clip-surface clip--circle" data-js-clip-trigger data-js-clip-output='#clip-output-circle'></div>
+
 					<pre>
-					.element{
-						clip-path: circle(150px at 50% 50%)
-					}
+.element{
+  -webkit-clip-path: <span id="clip-output-circle">circle(200px at 50% 50%)</span>
+}
 					</pre>
 				</section>
 
 				<section>
-					// ellipse() function demonstration
+					<div class="clip-surface clip--ellipse" data-js-clip-trigger data-js-clip-output='#clip-output-ellipse'></div>
+
 					<pre>
-					.element{
-						clip-path: ellipse(300px 150px at 50% 50%)
-					}
+.element{
+  -webkit-clip-path: <span id="clip-output-ellipse">ellipse(150px 250px at 50% 50%)</span>;
+}
 					</pre>
 				</section>
 
 				<section>
-					// polygon function demonstration
-					// house shape from sky picture
+					<div class="clip-surface clip--polygon" data-js-clip-trigger data-js-clip-output='#clip-output-polygon'></div>
+
 					<pre>
-					.element{
-						clip-path: polygon(...)
-					}
-					</pre>
-				</section>
+.element{
+  -webkit-clip-path: <span id="clip-output-polygon">polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px)</span>;
+}
+				</pre>
+			</section>
 
 				<section>
-					<h2>SVG clip-path</h2>
-				</section>
-
-				<section>
-					// yellow bg - draw attention
+					// red bg
 					<h2>SVG</h2>
 					<ul>
 						<li>Scalable</li>
@@ -478,6 +476,13 @@
 						<li>Scriptable (vanilla, Snap, Raphael)</li>
 						<li>Decent support</li>
 					</ul>
+					<aside class="notes">
+						Deer SVG, scale, bob head, change fill
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="monotype">&lt;clip-path&gt;</h1>
 				</section>
 
 				<section>
@@ -598,11 +603,6 @@
 				</section>
 
 				<section>
-					<h2>My wish</h2>
-					- Markus Eckert's mesh demo
-				</section>
-
-				<section>
 					<h1>End.</h1>
 				</section>
 
@@ -612,6 +612,8 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+		<script src="js/CSSShapesEditor-min.js"></script>
+
 
 		<script>
 
@@ -641,6 +643,44 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+
+			(function(){
+					var clipEditor;
+
+					document.addEventListener('click', function(e){
+						if (e.target.dataset && e.target.dataset.jsClipTrigger !== undefined){
+							var target = e.target;
+							var value = window.getComputedStyle(target).webkitClipPath;
+							var output = document.querySelector(e.target.dataset.jsClipOutput);
+
+							clipEditor = new CSSShapesEditor(target, value);
+
+							// force editor container to zoom in tune with the slides
+							clipEditor.on('ready', function(){
+								var slides = document.querySelector('div.slides');
+								var slidesStyle = window.getComputedStyle(slides);
+								var editorContainer = document.querySelector('[data-role="shape-editor"]');
+								editorContainer.style.zoom = slidesStyle.zoom;
+
+							});
+
+
+							clipEditor.on('shapechange', function(){
+								var outVal = clipEditor.getCSSValue();
+								target.style.webkitClipPath = outVal;
+								output.textContent = outVal;
+							})
+						}
+					});
+
+					Reveal.addEventListener('slidechanged', function(event){
+						if (clipEditor){
+							clipEditor.off('shapechange');
+							clipEditor.remove();
+							clipEditor = null;
+						}
+					});
+			})()
 
 		</script>
 

@@ -16,7 +16,7 @@
 	font-style: normal;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic|Source+Code+Pro:600,700);
 
 // Override theme settings (see ../template/settings.scss)
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
@@ -28,6 +28,9 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 	background-size: cover;
 }
 
+$codeFont: 'Source Code Pro', monotype;
+
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
@@ -37,48 +40,52 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
   background-size: cover;
 }
 
-.reveal pre{
-	box-shadow: none;
-	display: inline-block;
-}
-
-.reveal .slides section .fragment.highlight{
-	opacity: 1;
-}
-
-.reveal .slides section .fragment.highlight.current-fragment {
-	color: #444;
-	background: rgba(255, 255, 127, 1);
-	// font-size: 1.5em;
-}
-
-.reveal .demo {
-	p{
-		font-size: 0.6em;
-		line-height: 1.6;
+.reveal {
+	pre{
+		box-shadow: none;
+		display: inline-block;
+		font-family: $codeFont;
+		font-weight: 500;
 	}
-}
 
-.reveal .list{
-	margin: 0;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	.slides section .fragment.highlight{
+		opacity: 1;
+	}
 
-	& li{
-		padding: 0;
+	.slides section .fragment.highlight.current-fragment {
+		color: #444;
+		background: rgba(255, 255, 127, 1);
+	}
+
+	.demo {
+		p{
+			font-size: 0.6em;
+			line-height: 1.6;
+		}
+	}
+
+	.list{
 		margin: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li{
+			padding: 0;
+			margin: 0;
+		}
 	}
-}
 
-.reveal .list--horizontal{
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-}
+	.list--horizontal{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
 
-.reveal .list--start{
-	justify-content: flex-start;
+	.monotype{
+		font-family: $codeFont;
+		font-weight: 700;
+	}
 }
 
 .muted{
@@ -199,4 +206,25 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
       border-radius: 50%;
     }
   }
+}
+
+.clip-surface{
+  background: url('../../resources/pattern-science.png') left top;
+  height: 500px;
+}
+
+.clip--circle{
+  -webkit-clip-path: circle(200px at 50% 50%);
+  -moz-clip-path: circle(200px at 50% 50%);
+}
+
+.clip--ellipse{
+  -webkit-clip-path: ellipse(150px 250px at 50% 50%);
+  -moz-clip-path: ellipse(150px 250px at 50% 50%);
+}
+
+.clip--polygon{
+	background: url('../../resources/pattern-pentagon.png');
+  -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
+  -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
 }
