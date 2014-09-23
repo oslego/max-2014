@@ -15,7 +15,7 @@ $headingFont: 'Open Sans', Impact, sans-serif;;
 $headingColor: #fff;
 $headingLineHeight: 0.9em;
 $headingLetterSpacing: 0.01em;
-$headingTextTransform: uppercase;
+$headingTextTransform: none;
 $headingTextShadow: none;
 $heading1TextShadow: none;
 
@@ -24,7 +24,7 @@ $linkColor: #13DAEC;
 $linkColorHover: lighten( $linkColor, 20% );
 
 // Text selection
-$selectionBackgroundColor: pink;
+$selectionBackgroundColor: rgb(124, 180, 227);
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden

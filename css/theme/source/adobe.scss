@@ -23,7 +23,9 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 
 // Background generator
 @mixin bodyBackground() {
-	@include radial-gradient( rgba(0,30,32,1), rgba(0,90,95,1) );
+	background: url(../../resources/texture-concrete.jpg) rgba(47,61,75,1) ;
+	background-blend-mode: multiply;
+	background-size: cover;
 }
 
 // Theme template ------------------------------

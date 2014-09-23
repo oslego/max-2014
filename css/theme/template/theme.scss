@@ -37,15 +37,15 @@ body {
 	color: $headingColor;
 
 	font-family: $headingFont;
+	font-weight: 700;
 	line-height: $headingLineHeight;
 	letter-spacing: $headingLetterSpacing;
 
 	text-transform: $headingTextTransform;
-	text-shadow: $headingTextShadow;
 }
 
 .reveal h1 {
-	text-shadow: $heading1TextShadow;
+	// text-shadow: $heading1TextShadow;
 }
 
 
