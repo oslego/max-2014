@@ -2,7 +2,7 @@
 // overridden by the super-theme
 
 // Background of the presentation
-$backgroundColor: rgba(46, 61, 75, 1);
+$backgroundColor: #683D76;
 
 // Primary/body text
 $mainFont: 'Open Sans', sans-serif;
@@ -11,7 +11,7 @@ $mainColor: #eee;
 
 // Headings
 $headingMargin: 0 0 20px 0;
-$headingFont: 'Open Sans', Impact, sans-serif;;
+$headingFont: 'Montserrat', Impact, sans-serif;;
 $headingColor: #fff;
 $headingLineHeight: 0.9em;
 $headingLetterSpacing: 0.01em;
@@ -30,5 +30,4 @@ $selectionColor: #fff;
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {
-	background: $backgroundColor;
 }

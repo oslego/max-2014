@@ -83,7 +83,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-background="resources/print-press-freedom.jpg" data-background-size="cover">
 					// picture from hi-q print
 				</section>
 
@@ -155,11 +155,14 @@
 				</section>
 
 				<section>
-					// picture of "CSS Tricks Shapes of CSS"
+					<a href="http://css-tricks.com/examples/ShapesOfCSS/" target="_blank">
+						<img src="resources/screenshots/csstricks-shapes.png" alt="">
+					</a>
 				</section>
 
 				<section>
 					<h1>CSS Shapes</h1>
+					<img src="resources/css-shapes" alt="Illustration of CSS Shapes">
 				</section>
 
 				<section>
@@ -486,50 +489,116 @@
 				</section>
 
 				<section>
+					// deer clip-path on click
 				<pre>
-					// CSS
-					.element{
-						-webkit-clip-path: url(#shape);
-					}
+&lt;style&gt;
+.element{
+  -webkit-clip-path: url(#shape);
+}
+&lt;/style&gt;
 
-					// SVG
-					// code for clip-path + circle
+&lt;svg&gt;
+&lt;defs&gt;
+  &lt;clip-path id=&quot;#shape&quot;&gt;
+	...
+  &lt;/clip-path&gt;
+&lt;/defs&gt;
+&lt;/svg&gt;
 				</pre>
 				</section>
 
 				<section>
-				<pre>
-					// CSS
-					.element{
-						-webkit-clip-path: url(#shape);
-					}
-
-					// SVG
-					// code for clip-path + text-path
-				</pre>
+					// text clip-path
 				</section>
 
 				<section>
-					<h2>Browser support</h2>
-					// HTML, HTML + SVG, SVG
+					// text path clip-path
 				</section>
+
+				<section>
+					<h2>Browser Support for <code>clip-path</code></h2>
+				</section>
+
+				<section>
+					<table class="support-matrix">
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+									HTML
+								</th>
+								<th>
+									HTML&#8592;SVG
+								</th>
+								<th>
+									SVG
+								</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><img src="resources/logos/chrome.png" alt="Chrome"></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/opera.png" alt="Opera"></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/firefox.png" alt="Firefox"></td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/safari.png" alt="Safari"></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/ie.png" alt="Internet Explorer"></td>
+								<td>&#10006;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+						</tbody>
+					</table>
+ 				</section>
 
 				<section>
 					<h2>clipping vs masking</h2>
+					// masking illustration
 				</section>
 
 				<section>
-					// fade "clipping" to black
-					// spotlight move over masking
-					// reveal "masking" inverted color
+					<div class="masking-illustration">
+						<div class="container">
+							<div class="source"></div>
+						</div>
+
+						<div class="container">
+							<div class="mask"></div>
+						</div>
+
+						<div class="container">
+							<div class="target"></div>
+						</div>
+					</div>
 				</section>
 
 				<section>
-					// images as masks
-				</section>
-
-				<section>
-					// comparison alpha mask / luminance mask
+					<img src="resources/mask-type-illustration" alt="Illustration of alpha and luminance mask effects." />
 				</section>
 
 				<section>
@@ -537,27 +606,29 @@
 				</section>
 
 				<section>
-				// interactive code editor
-				<pre>
-					.element{
-						mask-image: url(texture.png);
-						mask-type: alpha;
-						mask-image-size: cover;
-					}
-				</pre>
+					// Trekking demo
+					<aside class="notes">
+					Image, gradient, fixed bg, animated GIF, mask-image-position
+					</aside>
 				</section>
 
 				<section>
-					// live demo mask from gradient, fixed, animated gif
+					<a href="https://medium.com/@joshuadavisnow/the-mercenary-ac3bd0d025f5" target="_blank" title="The Mercenary story on Medium">
+						<img src="resources/screenshots/medium-mercenary1.png" alt="">
+					</a>
 				</section>
 
 				<section>
-					// story, "The Mercenary" + masks
+					<a href="https://medium.com/@joshuadavisnow/the-mercenary-ac3bd0d025f5" target="_blank" title="The Mercenary story on Medium">
+						<img src="resources/screenshots/medium-mercenary2.png" alt="">
+					</a>
 				</section>
 
 				<section>
 					<h2>Responsive masks</h2>
-					// live demo "California"
+					<a href="https://oslego.github.io/responsive-mask-image" target="_blank" title="Demo of responsive mask with background image">
+						<img src="resources/screenshots/responsive-mask.png" />
+					</a>
 				</section>
 
 				<section>
@@ -579,9 +650,150 @@
 					</aside>
 				</section>
 
+				<section data-background="resources/crying.gif">
+					<h2>Browser Support for <code>mask</code></h2>
+				</section>
+
 				<section>
-					<h2>Browser support</h2>
-					// HTML, HTML + SVG, SVG
+					<table class="support-matrix">
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+									Image
+								</th>
+								<th>
+									Gradient
+								</th>
+								<th>
+									HTML&#8592;SVG
+								</th>
+								<th>
+									SVG&#8592;SVG
+								</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><img src="resources/logos/chrome.png" alt="Chrome"></td></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/opera.png" alt="Opera"></td></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/firefox.png" alt="Firefox"></td>
+								<td>&#10006;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/safari.png" alt="Safari"></td></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/ie.png" alt="Internet Explorer"></td>
+								<td>&#10006;</td>
+								<td>&#10006;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</section>
+
+				<section>
+					<table class="support-matrix">
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+									Image
+								</th>
+								<th>
+									Gradient
+								</th>
+								<th>
+									HTML&#8592;SVG
+								</th>
+								<th>
+									SVG&#8592;SVG
+								</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><img src="resources/logos/chrome.png" alt="Chrome"><span class="caveat">&#42;</span></td></td>
+								<td>&#10004;<span class="caveat">&#134;</span></td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/opera.png" alt="Opera"><span class="caveat">&#42;</span></td></td>
+								<td>&#10004;<span class="caveat">&#134;</span></td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/firefox.png" alt="Firefox"></td>
+								<td>&#10006;<span class="caveat">&#135;</span></td>
+								<td>&#10006;<span class="caveat">&#135;</span></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/safari.png" alt="Safari"><span class="caveat">&#42;</span></td></td>
+								<td>&#10004;</td>
+								<td>&#10004;</td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+
+							<tr>
+								<td><img src="resources/logos/ie.png" alt="Internet Explorer"></td>
+								<td>&#10006;<span class="caveat">&#135;</span></td>
+								<td>&#10006;<span class="caveat">&#135;</span></td>
+								<td>&#10006;</td>
+								<td>&#10004;</td>
+							</tr>
+						</tbody>
+
+						<caption>
+							&#42; prefixed with -webkit- <br>
+							&#134; luminance support behind flag (Chrome 37, Opera 24)<br>
+							&#135; may be polyfilled with SVG (IE 8-10 only gradient. IE 11 image & gradient)
+						</caption>
+
+						<aside class="notes">
+						Chrome, Opera: alpha image masks, luminance behind flag <br>
+						IE, Firefox: polyfill-able image & gradient masks with SVG<br>
+						</aside>
+
+					</table>
+
 				</section>
 
 				<section>

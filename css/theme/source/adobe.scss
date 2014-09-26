@@ -17,15 +17,15 @@
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic|Source+Code+Pro:600,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 // Override theme settings (see ../template/settings.scss)
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
 
 // Background generator
 @mixin bodyBackground() {
-	background: url(../../resources/texture-concrete.jpg) rgba(47,61,75,1) ;
-	background-blend-mode: multiply;
-	background-size: cover;
+	background: url(../../resources/polygon.gif);
+	background-blend-mode: hard-light;
 }
 
 $codeFont: 'Source Code Pro', monotype;
@@ -85,6 +85,55 @@ $codeFont: 'Source Code Pro', monotype;
 	.monotype{
 		font-family: $codeFont;
 		font-weight: 700;
+	}
+}
+
+.support-matrix{
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	caption-side: bottom;
+
+	caption{
+		font-size: 0.5em;
+		text-align: left;
+	}
+
+	.caveat{
+		font-size: 0.6em;
+		position: absolute;
+		top: 10%;
+		right: 10%;
+	}
+
+	img{
+		width: 100px;
+		height: 100px;
+	}
+
+	tr td,
+	tr th {
+		position: relative;
+		vertical-align: middle;
+		text-align: center;
+		padding: 0.2em;
+	}
+
+	tbody td:not(:nth-child(1)){
+		font-size: 1.5em;
+		min-width: 2em;
+	}
+
+	$tableBorder: 2px solid rgba(255, 255, 255, 0.2);
+
+	tbody td:nth-child(1){
+		min-width: auto;
+		border-right: $tableBorder;
+		padding: 0 0.5em;
+	}
+
+	thead th:not(:nth-child(1)){
+		border-bottom: $tableBorder;
 	}
 }
 
@@ -227,4 +276,61 @@ $codeFont: 'Source Code Pro', monotype;
 	background: url('../../resources/pattern-pentagon.png');
   -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
   -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
+}
+
+
+.masking-illustration{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	.container{
+		perspective: 900px;
+		flex: 1 0 33%;
+	}
+
+	&:hover{
+		.mask{
+			background-size: 100% 100%;
+		}
+
+		.target{
+			-webkit-mask-size: 100% 100%;
+		}
+	}
+
+	@keyframes edge-out{
+		to{
+			transform: rotateY(30deg);
+		}
+	}
+
+	.mask,
+	.source,
+	.target{
+		transform-origin: right center;
+		transform: rotateY(40deg);
+		height: 600px;
+		transition: all 0.5s ease-out;
+	}
+
+	.mask{
+		// background: url('../../resources/mask-splatter.png');
+		background: url('../../resources/mask-splatter.jpg');
+		mask-source-type: luminance;
+		background-position: center center;
+		background-size: 200px 260px;
+	}
+
+	.source,
+	.target{
+		background: url('../../resources/mask-target.jpg') center center;
+	}
+
+	.target{
+		-webkit-mask: url('../../resources/mask-splatter.png');
+		// mask-source-type: luminance;
+		-webkit-mask-position: center center;
+		-webkit-mask-size: 200px 260px;
+	}
 }

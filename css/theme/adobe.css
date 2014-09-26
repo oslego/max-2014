@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic|Source+Code+Pro:600,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../lib/font/league_gothic-webfont.eot");
@@ -10,10 +11,9 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: url(../../resources/texture-concrete.jpg) #2f3d4b;
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-color: #2e3d4b; }
+  background: url(../../resources/polygon.gif);
+  background-blend-mode: hard-light;
+  background-color: #683d76; }
 
 .reveal {
   font-family: "Open Sans", sans-serif;
@@ -38,11 +38,14 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: white;
-  font-family: "Open Sans", Impact, sans-serif;
+  font-family: "Montserrat", Impact, sans-serif;
   font-weight: 700;
   line-height: 0.9em;
   letter-spacing: 0.01em;
   text-transform: none; }
+
+.reveal h1 {
+  font-weight: 700; }
 
 /*********************************************
  * LINKS
@@ -159,6 +162,38 @@ body {
   font-family: "Source Code Pro", monotype;
   font-weight: 700; }
 
+.support-matrix {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  caption-side: bottom; }
+  .support-matrix caption {
+    font-size: 0.5em;
+    text-align: left; }
+  .support-matrix .caveat {
+    font-size: 0.6em;
+    position: absolute;
+    top: 10%;
+    right: 10%; }
+  .support-matrix img {
+    width: 100px;
+    height: 100px; }
+  .support-matrix tr td,
+  .support-matrix tr th {
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.2em; }
+  .support-matrix tbody td:not(:nth-child(1)) {
+    font-size: 1.5em;
+    min-width: 2em; }
+  .support-matrix tbody td:nth-child(1) {
+    min-width: auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 0 0.5em; }
+  .support-matrix thead th:not(:nth-child(1)) {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+
 .muted {
   -webkit-filter: grayscale(1) brightness(1.5);
   filter: grayscale(1) brightness(1.5); }
@@ -252,3 +287,38 @@ body {
   background: url("../../resources/pattern-pentagon.png");
   -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
   -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px); }
+
+.masking-illustration {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  @keyframes edge-out {
+    to {
+      transform: rotateY(30deg); } }
+ }
+  .masking-illustration .container {
+    perspective: 900px;
+    flex: 1 0 33%; }
+  .masking-illustration:hover .mask {
+    background-size: 100% 100%; }
+  .masking-illustration:hover .target {
+    -webkit-mask-size: 100% 100%; }
+  .masking-illustration .mask,
+  .masking-illustration .source,
+  .masking-illustration .target {
+    transform-origin: right center;
+    transform: rotateY(40deg);
+    height: 600px;
+    transition: all 0.5s ease-out; }
+  .masking-illustration .mask {
+    background: url("../../resources/mask-splatter.jpg");
+    mask-source-type: luminance;
+    background-position: center center;
+    background-size: 200px 260px; }
+  .masking-illustration .source,
+  .masking-illustration .target {
+    background: url("../../resources/mask-target.jpg") center center; }
+  .masking-illustration .target {
+    -webkit-mask: url("../../resources/mask-splatter.png");
+    -webkit-mask-position: center center;
+    -webkit-mask-size: 200px 260px; }

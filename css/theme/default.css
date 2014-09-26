@@ -15,14 +15,7 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #1c1e20;
-  background: -moz-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #555a5f), color-stop(100%, #1c1e20));
-  background: -webkit-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
-  background: -o-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
-  background: -ms-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
-  background: radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
-  background-color: #2e3d4b; }
+  background-color: #683d76; }
 
 .reveal {
   font-family: "Open Sans", sans-serif;
@@ -47,11 +40,14 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: white;
-  font-family: "Open Sans", Impact, sans-serif;
+  font-family: "Montserrat", Impact, sans-serif;
   font-weight: 700;
   line-height: 0.9em;
   letter-spacing: 0.01em;
   text-transform: none; }
+
+.reveal h1 {
+  font-weight: 700; }
 
 /*********************************************
  * LINKS
