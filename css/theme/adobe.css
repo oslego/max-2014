@@ -134,15 +134,26 @@ body {
   background-size: cover; }
 
 .reveal pre {
+  box-sizing: border-box;
   box-shadow: none;
   display: inline-block;
   font-family: "Source Code Pro", monotype;
-  font-weight: 500; }
+  font-weight: 500;
+  background: black;
+  font-size: 1em;
+  width: 200%;
+  margin-left: -50%;
+  padding-left: 45%;
+  padding-right: 45%;
+  padding-top: 1em;
+  padding-bottom: 15em;
+  transform: translate(0, 0, 1); }
 .reveal .slides section .fragment.highlight {
-  opacity: 1; }
+  opacity: 1;
+  white-space: nowrap; }
 .reveal .slides section .fragment.highlight.current-fragment {
-  color: #444;
-  background: #ffff7f; }
+  color: #000;
+  background: orange; }
 .reveal .demo p {
   font-size: 0.6em;
   line-height: 1.6; }
@@ -291,25 +302,28 @@ body {
 .masking-illustration {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  @keyframes edge-out {
-    to {
-      transform: rotateY(30deg); } }
- }
+  justify-content: space-between; }
   .masking-illustration .container {
     perspective: 900px;
-    flex: 1 0 33%; }
+    flex: 1 0 33%;
+    transition: all 0.5s ease-out;
+    z-index: 2; }
   .masking-illustration:hover .mask {
-    background-size: 100% 100%; }
+    background-size: 100% 100%;
+    transform: rotateY(0deg); }
   .masking-illustration:hover .target {
-    -webkit-mask-size: 100% 100%; }
+    -webkit-mask-size: 100% 100%;
+    transform: rotateY(0deg); }
+  .masking-illustration:hover .container:nth-child(1) {
+    flex: 0; }
   .masking-illustration .mask,
   .masking-illustration .source,
   .masking-illustration .target {
     transform-origin: right center;
-    transform: rotateY(40deg);
+    transform: rotateY(30deg);
     height: 600px;
-    transition: all 0.5s ease-out; }
+    transition: all 0.5s ease-out;
+    transition-delay: 0.5s; }
   .masking-illustration .mask {
     background: url("../../resources/mask-splatter.jpg");
     mask-source-type: luminance;
@@ -317,7 +331,8 @@ body {
     background-size: 200px 260px; }
   .masking-illustration .source,
   .masking-illustration .target {
-    background: url("../../resources/mask-target.jpg") center center; }
+    background: url("../../resources/mask-target.jpg") center center;
+    background-size: cover; }
   .masking-illustration .target {
     -webkit-mask: url("../../resources/mask-splatter.png");
     -webkit-mask-position: center center;

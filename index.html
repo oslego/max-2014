@@ -45,7 +45,7 @@
 
 				<section>
 					<header>
-						<h1>Beyond Rectanges in Web Design</h1>
+						<h1>Beyond Rectangles in Web Design</h1>
 						<h3>CSS Shapes & CSS Masking</h3>
 					</header>
 				</section>
@@ -179,21 +179,18 @@
 
 					</div>
 
+					<pre>
+					.element {
+						<span class="fragment highlight">float: left;</span>
+						<span class="fragment highlight">shape-outside: url(image.png);</span>
+						<span class="fragment highlight">shape-image-threshold: 0.5;</span>
+					}
+					</pre>
+
 					<aside class="notes">
 						Naive, using img with transparent bg, expecting text to fill the gaps.
 						Disappointed to get square shape around img.
 					</aside>
-				</section>
-
-				<section>
-					<h2>Shape from image</h2>
-<pre>
-.element {
-  <span class="fragment highlight">float: left;</span>
-  <span class="fragment highlight">shape-outside: url(image.png);</span>
-  <span class="fragment highlight">shape-image-threshold: 0.5;</span>
-}
-</pre>
 				</section>
 
 				<section>
@@ -465,7 +462,7 @@
 
 					<pre>
 .element{
-  -webkit-clip-path: <span id="clip-output-polygon">polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px)</span>;
+  <span class="fragment highlight">-webkit-</span>clip-path: <span id="clip-output-polygon">polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px)</span>;
 }
 				</pre>
 			</section>
@@ -485,7 +482,7 @@
 				</section>
 
 				<section>
-					<h1 class="monotype">&lt;clip-path&gt;</h1>
+					<h1 class="monotype">&lt;clipPath&gt;</h1>
 				</section>
 
 				<section>
@@ -595,6 +592,11 @@
 							<div class="target"></div>
 						</div>
 					</div>
+<pre>
+.element{
+  -webkit-mask: url(mask.png);
+}
+</pre>
 				</section>
 
 				<section>
