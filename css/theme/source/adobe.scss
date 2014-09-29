@@ -40,6 +40,24 @@ $codeFont: 'Source Code Pro', monotype;
   background-size: cover;
 }
 
+.workaround .reveal{
+	.state-background{
+		background-image: repeating-linear-gradient(-60deg, transparent, transparent 35px, rgba(0,0,0,.8) 35px, rgba(0,0,0,.8) 70px);
+		background-size: 90px 50px;
+		background-repeat: repeat-x;
+		background-color: orange;
+	}
+
+	pre{
+		background: #000 url("../../resources/icon_cone.svg") right 15% no-repeat;
+		background-size: auto 60vh;
+	}
+
+	h2{
+		color: black;
+	}
+}
+
 .reveal {
 	pre{
 		box-sizing: border-box;
@@ -56,6 +74,10 @@ $codeFont: 'Source Code Pro', monotype;
 		padding-top: 1em;
 		padding-bottom: 15em;
 		transform: translate(0,0,1);
+	}
+
+	.not-important{
+		opacity: 0.4;
 	}
 
 	.slides section .fragment.highlight{
@@ -207,8 +229,8 @@ $codeFont: 'Source Code Pro', monotype;
 
 .demo--shape-image{
 	.shape{
-		width: 500px;
-		height: 500px;
+		width: 350px;
+		height: 350px;
 		margin: 1em;
 		shape-margin: 1em;
 		shape-outside: url("../../resources/espresso.png");

@@ -180,11 +180,11 @@
 					</div>
 
 					<pre>
-					.element {
-						<span class="fragment highlight">float: left;</span>
-						<span class="fragment highlight">shape-outside: url(image.png);</span>
-						<span class="fragment highlight">shape-image-threshold: 0.5;</span>
-					}
+<span class="not-important">.element {</span>
+  <span class="fragment highlight">float: left;</span>
+  <span class="fragment highlight">shape-outside: url(image.png);</span>
+  <span class="fragment highlight">shape-image-threshold: 0.5;</span>
+<span class="not-important">}</span>
 					</pre>
 
 					<aside class="notes">
@@ -223,9 +223,9 @@
 					</div>
 
 <pre>
-.element{
+<span class="not-important">.element{</span>
   shape-outside: circle(<span class="fragment highlight">150px</span> at <span class="fragment highlight">50% 50%</span>)
-}
+<span class="not-important">}</span>
 </pre>
 				</section>
 
@@ -283,9 +283,9 @@
 
 					</div>
 <pre>
-.element{
+<span class="not-important">.element{</span>
   shape-outside: ellipse(<span class="fragment highlight">150px 300px</span> at <span class="fragment highlight">50% 50%</span>)
-}
+<span class="not-important">}</span>
 </pre>
 				</section>
 
@@ -314,48 +314,44 @@
 
 					</div>
 <pre>
-.element{
+<span class="not-important">.element{</span>
   shape-outside: polygon(<span class="fragment highlight">111px 239px</span>, 23px 222px, 4px 175px ...)
+<span class="not-important">}</span>
+</pre>
+				</section>
+
+				<section data-background="resources/screenshots/alice-1.jpg"></section>
+				<section data-background="resources/screenshots/alice-2.jpg"></section>
+				<section data-background="resources/screenshots/alice-3.jpg"></section>
+				<section data-background="resources/screenshots/alice-4.jpg"></section>
+				<section data-background="resources/screenshots/alice-5.jpg"></section>
+
+				<section data-background="resources/screenshots/alice-1-shape-inside.jpg"></section>
+
+				<section data-state="workaround">
+					<h2><code>shape-inside</code><br>workaround</h2>
+<pre>
+<span class="fragment highlight">&lt;div class=&quot;left&quot;&gt</span>
+<span class="fragment highlight">&lt;div class=&quot;right&quot;&gt</span>
+<span class="not-important">Alice was beginning to get very tired ...</span>
+
+.left{
+  <span class="fragment highlight">float: left;</span>
+  shape-outside: polygon(0 0, ...);
+}
+.right{
+  <span class="fragment highlight">float: right;</span>
+  shape-outside: polygon(50% 0, ...);
 }
 </pre>
 				</section>
 
-				<section>
-					// Alice demo video
-					<aside class="notes">
-						Enhancend visual storytelling. 2013 demo, implementation.
-					</aside>
-				</section>
+				<section data-background="resources/screenshots/alice-1-shape-inside.jpg"></section>
+
+				<section data-background="resources/screenshots/alice-1-shape-outside.jpg"></section>
 
 				<section>
-					<h2>shape-inside</h2>
-					// deferred from CSS Shapes Level 1
-					// illustration of Alice scene 1
-					<pre>
-					.element{
-						shapes-inside: polygon(...);
-					}
-					</pre>
-				</section>
-
-				<section data-background="#fc0">
-					<h2>Workaround</h2>
-					// yellow bg.
-					// illustration of Alice scene 1
-					<pre>
-					.left{
-						float: left;
-						shape-outside: polygon(...);
-					}
-					.right{
-						float: right;
-						shape-outside: polygon(...);
-					}
-					</pre>
-				</section>
-
-				<section>
-					// Alice in Wonderland live demo
+					<a href="http://webplatform.adobe.com/Demo-for-Alice-s-Adventures-in-Wonderland/"></a>
 				</section>
 
 				<section>
@@ -373,11 +369,6 @@
 					<h2>Tooling</h2>
 					<ul class="list list--horizontal">
 						<li>
-							<a href="http://blog.brackets.io/2014/04/17/css-shapes-editor/" target="_blank" title="CSS Shapes Editor for Brackets">
-								<img src="resources/logos/brackets.png" alt="Logo of Brackets code editor" />
-							</a>
-						</li>
-						<li>
 							<a href="https://chrome.google.com/webstore/detail/css-shapes-editor/nenndldnbcncjmeacmnondmkkfedmgmp" target="_blank" title="CSS Shapes Editor for Chrome">
 								<img src="resources/logos/chrome.png" alt="Logo of Chrome browser">
 							</a>
@@ -385,6 +376,11 @@
 						<li>
 							<a href="https://addons.opera.com/en/extensions/details/css-shapes-editor/" target="_blank" title="CSS Shapes Editor for Opera">
 								<img src="resources/logos/opera.png" alt="Logo of Opera browser">
+							</a>
+						</li>
+						<li>
+							<a href="http://blog.brackets.io/2014/04/17/css-shapes-editor/" target="_blank" title="CSS Shapes Editor for Brackets">
+								<img src="resources/logos/brackets.png" alt="Logo of Brackets code editor" />
 							</a>
 						</li>
 					</ul>
@@ -409,7 +405,10 @@
 								<img src="resources/logos/ie.png" alt="Logo of Internet Explorer browser" />
 						</li>
 					</ul>
-					<a href="http://blogs.adobe.com/webplatform/2014/05/12/css-shapes-polyfill/" target="_blank">CSS Shapes Polyfill</a>
+
+					<a href="http://blogs.adobe.com/webplatform/2014/05/12/css-shapes-polyfill/" target="_blank" class="fragment">
+						<img src="resources/screenshots/css-shapes-polyfill.jpg" alt="Screenshot of GitHub repository for CSS Shapes Polyfill script">
+					</a>
 				</section>
 
 				<section data-background="resources/moto360.jpg">

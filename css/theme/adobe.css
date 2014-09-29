@@ -133,6 +133,17 @@ body {
   background-image: -webkit-linear-gradient(225deg, rgba(0, 0, 0, 0) 50%, black);
   background-size: cover; }
 
+.workaround .reveal .state-background {
+  background-image: repeating-linear-gradient(-60deg, transparent, transparent 35px, rgba(0, 0, 0, 0.8) 35px, rgba(0, 0, 0, 0.8) 70px);
+  background-size: 90px 50px;
+  background-repeat: repeat-x;
+  background-color: orange; }
+.workaround .reveal pre {
+  background: black url("../../resources/icon_cone.svg") right 15% no-repeat;
+  background-size: auto 60vh; }
+.workaround .reveal h2 {
+  color: black; }
+
 .reveal pre {
   box-sizing: border-box;
   box-shadow: none;
@@ -148,6 +159,8 @@ body {
   padding-top: 1em;
   padding-bottom: 15em;
   transform: translate(0, 0, 1); }
+.reveal .not-important {
+  opacity: 0.4; }
 .reveal .slides section .fragment.highlight {
   opacity: 1;
   white-space: nowrap; }
@@ -242,8 +255,8 @@ body {
   shape-outside: polygon(nonzero, 111px 239px, 23px 222px, 4px 175px, 72px 95px, 120px 63px, 164px 87px, 197px 151px, 220px 90px, 279px 87px, 268px 149px, 330px 154px, 387px 181px, 390px 207px, 363px 242px, 346px 301px, 403px 290px, 371px 320px, 202px 330px, 59px 336px, 46px 318px, 53px 295px); }
 
 .demo--shape-image .shape {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   margin: 1em;
   shape-margin: 1em;
   shape-outside: url("../../resources/espresso.png");
