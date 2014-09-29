@@ -144,6 +144,46 @@ body {
 .workaround .reveal h2 {
   color: black; }
 
+.svg-scene .reveal .state-background {
+  background-image: linear-gradient(#8e2525, #8e2525), url("../../resources/texture-wall.png");
+  background-blend-mode: multiply;
+  background-size: cover; }
+.svg-scene .reveal section {
+  text-align: left; }
+.svg-scene .reveal #svg {
+  height: 720px; }
+.svg-scene .reveal .demo {
+  position: absolute;
+  height: 50%;
+  transform: translate(0, 0); }
+.svg-scene .reveal .demo.fragment {
+  opacity: 1;
+  transform-origin: left 30%;
+  transition: transform 1s ease-out; }
+.svg-scene .reveal .deer-body {
+  transition: opacity 1s ease-out; }
+.svg-scene .reveal .deer-glasses {
+  transform: scale(0.15) translate(45px, 90px);
+  fill: fuchsia; }
+.svg-scene .reveal .deer-scarf {
+  transform: scale(0.2) translate(30px, 80px);
+  fill: green; }
+.svg-scene .reveal .demo.fragment.visible {
+  transform: scale(3.5); }
+  .svg-scene .reveal .demo.fragment.visible .deer-head {
+    animation: headbob 1.6s infinite ease-out;
+    animation-delay: 3s; }
+
+@keyframes headbob {
+  25% {
+    transform: translate(-1px, 2px); }
+
+  50% {
+    transform: translate(0px, 0px); }
+
+  75% {
+    transform: translate(1px, 1px); } }
+
 .reveal pre {
   box-sizing: border-box;
   box-shadow: none;
