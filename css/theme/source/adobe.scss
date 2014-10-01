@@ -17,7 +17,7 @@
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,800,400|Open+Sans+Condensed:300,300italic|Source+Code+Pro:600,700);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Fredericka+the+Great|Luckiest+Guy|);
 
 // Override theme settings (see ../template/settings.scss)
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
@@ -376,15 +376,41 @@ $codeFont: 'Source Code Pro', monotype;
   -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
 }
 
-.clip--clippath{
-	-webkit-clip-path: url('#clip-mask-interactive');
-	-moz-clip-path: url('#clip-mask-interactive');
+.clip--interactive{
+	-webkit-clip-path: url('#clip-interactive');
+	-moz-clip-path: url('#clip-interactive');
 	// background-size: 400px;
 
 	/* ISSUE: https://code.google.com/p/chromium/issues/detail?id=417370 */
 	/* affects Chrome 37, Safari on IOS 8, */
-	// -webkit-transform: translate(0,0);
+	-webkit-transform: translate(0,0);
 	transform: translate(0,0);
+}
+
+.clip--text{
+	-webkit-clip-path: url('#clip-text');
+	-moz-clip-path: url('#clip-text');
+	-webkit-transform: translate(0,0) scale(1.5);
+	transform: translate(0,0) scale(1.5);
+	background-size: 400px;
+}
+
+@supports (-webkit-clip-path: url('#clip-text')){
+	h1.clip--text{
+		font-size: 0;
+	}
+}
+
+#clip-text {
+	font-size: 4em;
+}
+
+.font1{
+	font-family: 'Luckiest Guy', cursive;
+}
+
+.font2{
+	font-family: 'Fredericka the Great', cursive;
 }
 
 .offscreen{

@@ -510,6 +510,7 @@
 				</section>
 
 				<section>
+					<h2>clipping HTML with SVG</h2>
 				<pre>
 <span class="not-important">&lt;style&gt;</span>
 <span class="not-important">.element{</span>
@@ -530,11 +531,11 @@
 				<section>
 					<svg class="offscreen" viewPort="0 0 960 500" version="1.1" xmlns="http://www.w3.org/2000/svg">
 				    <defs>
-				        <clipPath id="clip-mask-interactive">
+				        <clipPath id="clip-interactive">
 				        </clipPath>
 				    </defs>
 					</svg>
-					<div class="clip-surface clip--clippath" data-js-svg-clip-trigger data-js-clip-output='#clip-output-clippath'></div>
+					<div class="clip-surface clip--interactive" data-js-svg-clip-trigger data-js-clip-output='#clip-output-clippath'></div>
 
 					<pre>
 &lt;clipPath id=&quot;#shape&quot;&gt;<span id="clip-output-clippath"></span>
@@ -544,9 +545,21 @@
 					</pre>
 				</section>
 
-
 				<section>
-					// text clip-path
+					<svg class="offscreen" viewPort="0 0 960 500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+								<clipPath id="clip-text">
+									<text text-anchor="middle" class="font1" x="480" dy="300">Los Angeles</text>
+								</clipPath>
+						</defs>
+					</svg>
+					<h1 class="clip-surface clip--text">Los Angeles</h1>
+					<pre>
+<span class="not-important">&lt;clipPath id=&quot;#shape&quot;&gt;</span>
+  &lt;text&gt;Los Angeles&lt;/text&gt;
+<span class="not-important">&lt;/clipPath&gt;</span>
+					</pre>
+
 				</section>
 
 				<section>
@@ -952,7 +965,7 @@
 
 						if (e.target.dataset && e.target.dataset.jsSvgClipTrigger !== undefined){
 							var target = e.target;
-							var clipPath = document.querySelector('#clip-mask-interactive');
+							var clipPath = document.querySelector('#clip-interactive');
 							var box = e.target.getBoundingClientRect();
 							var x = Math.round(e.x - box.left);
 							var y = Math.round(e.y - box.top);
@@ -972,6 +985,13 @@
 
 							// force relayout
 							target.style.width = box.width + "px";
+						}
+					});
+
+					document.addEventListener('click', function(e){
+						if (e.target.classList.contains('clip--text')){
+							var clip = document.querySelector('#clip-text text');
+							clip.setAttribute('class', 'font2');
 						}
 					});
 
