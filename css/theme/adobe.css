@@ -367,17 +367,35 @@ body {
   transform: translate(0, 0) scale(1.5);
   background-size: 400px; }
 
+.clip--textpath {
+  -webkit-clip-path: url("#clip-textpath");
+  -moz-clip-path: url("#clip-textpath");
+  -webkit-transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1);
+  background-size: 400px; }
+
 @supports (-webkit-clip-path: url("#clip-text")) {
-  h1.clip--text {
+  h1.clip--text,
+  h1.clip--textpath {
     font-size: 0; } }
 #clip-text {
   font-size: 4em; }
+
+#clip-textpath {
+  font-size: 1em; }
 
 .font1 {
   font-family: 'Luckiest Guy', cursive; }
 
 .font2 {
   font-family: 'Fredericka the Great', cursive; }
+
+.font--textpath {
+  font-family: "Montserrat", Impact, sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  word-spacing: 0.2em;
+  letter-spacing: -6px; }
 
 .offscreen {
   position: absolute;
