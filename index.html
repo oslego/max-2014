@@ -528,17 +528,17 @@
 				</pre>
 				</section>
 
-				<section>
+					<section id="svg-clipping">
 					<svg class="offscreen" viewPort="0 0 960 500" version="1.1" xmlns="http://www.w3.org/2000/svg">
 				    <defs>
 				        <clipPath id="clip-interactive">
 				        </clipPath>
 				    </defs>
 					</svg>
-					<div class="clip-surface clip--interactive" data-js-svg-clip-trigger data-js-clip-output='#clip-output-clippath'></div>
+					<div class="clip-surface clip--interactive" data-js-svg-clip-trigger></div>
 
 					<pre>
-&lt;clipPath id=&quot;#shape&quot;&gt;<span id="clip-output-clippath"></span>
+&lt;clipPath id=&quot;#shape&quot;&gt;
   <span class="fragment">&lt;circle r=&quot;100&quot; cx=&quot;400&quot; cy=&quot;200&quot; /&gt;</span>
   <span class="fragment">&lt;path d=&quot;M24.527,11.121c-0.227-0.226 ...&quot; /&gt;</span>
 &lt;/clipPath&gt;
@@ -997,10 +997,14 @@
 							el.setAttribute('transform', 'translate('+ x +','+ y +') scale(10)');
 							clipPath.appendChild(el);
 
-							// var output = document.querySelector(e.target.dataset.jsClipOutput);
-							// output.textContent = clipPath.innerHTML.toString().replace(/\s{2,}/g,'').replace(/>/,'>\n');
+							var slide = Reveal.getCurrentSlide();
+							// auto-advance fragments
+							if (slide.id == 'svg-clipping'){
+								Reveal.nextFragment();
+							}
 
-							// force relayout
+							// force relayout to draw mask
+							// FIXME: Canary bug
 							target.style.width = box.width + "px";
 						}
 					});
