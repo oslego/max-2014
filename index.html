@@ -649,8 +649,8 @@
 					// masking illustration
 				</section>
 
-				<section>
-					<div class="masking-illustration">
+				<section id="masking">
+					<div class="masking-illustration" data-state=0 data-max-state=6>
 						<div class="container">
 							<div class="source"></div>
 						</div>
@@ -663,11 +663,11 @@
 							<div class="target"></div>
 						</div>
 					</div>
-<pre>
+					<pre data-state=1>
 .element{
-  -webkit-mask: url(mask.png);
+  -webkit-mask: url(mask.jpg);
 }
-</pre>
+					</pre>
 				</section>
 
 				<section>
@@ -999,7 +999,7 @@
 
 							var slide = Reveal.getCurrentSlide();
 							// auto-advance fragments
-							if (slide.id == 'svg-clipping'){
+							if (slide.id === 'svg-clipping'){
 								Reveal.nextFragment();
 							}
 
@@ -1013,6 +1013,19 @@
 						if (e.target.classList.contains('clip--text')){
 							var clip = document.querySelector('#clip-text text');
 							clip.setAttribute('class', 'font2');
+						}
+					});
+
+					document.addEventListener('click', function(e){
+						var slide = Reveal.getCurrentSlide();
+
+						if (slide.id === 'masking'){
+							var demoHost = document.querySelector('.masking-illustration');
+							var currStateIndex = parseInt(demoHost.dataset.state, 10);
+							var maxStateIndex = parseInt(demoHost.dataset.maxState, 10);
+							var stateIndex = (currStateIndex === maxStateIndex) ? 0 : currStateIndex + 1;
+
+							demoHost.dataset.state = stateIndex
 						}
 					});
 

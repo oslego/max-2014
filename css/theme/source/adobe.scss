@@ -155,6 +155,15 @@ $codeFont: 'Source Code Pro', monotype;
 		background: orange ;
 	}
 
+	.slides section .fragment.current-visible{
+		position: absolute;
+	}
+
+	.slides section .fragment.current-visible.current-fragment{
+		position: relative;
+	}
+
+
 	.demo {
 		p{
 			font-size: 0.6em;
@@ -440,61 +449,156 @@ $codeFont: 'Source Code Pro', monotype;
 }
 
 .masking-illustration{
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
+	position: relative;
+	height: 550px;
+	cursor: pointer;
 
 	.container{
+		position: absolute;
 		perspective: 900px;
-		flex: 1 0 33%;
+		max-width: 33%;
 		transition: all 0.5s ease-out;
 		z-index: 2;
+
+		div{
+			height: 550px;
+			width: 320px;
+			transition: all 0.5s ease-out;
+		}
 	}
 
-	&:hover{
-		.mask{
-			background-size: 100% 100%;
-			transform: rotateY(0deg);
-		}
+	.container:nth-child(1),
+	.container:nth-child(2),
+	.container:nth-child(3){
+		opacity: 0;
+		transform: translate(320px,0);
+	}
 
-		.target{
-			-webkit-mask-size: 100% 100%;
-			transform: rotateY(0deg);
-		}
-
-		.container:nth-child(1){
-			flex: 0;
-		}
+	.container:nth-child(3){
+		opacity: 1;
 	}
 
 	.mask,
 	.source,
 	.target{
 		transform-origin: right center;
-		transform: rotateY(30deg);
-		height: 600px;
-		transition: all 0.5s ease-out;
-		transition-delay: 0.5s;
 	}
 
 	.mask{
+		background-image: url('../../resources/mask-splatter.jpg');
 		// background: url('../../resources/mask-splatter.png');
-		background: url('../../resources/mask-splatter.jpg');
-		mask-source-type: luminance;
+		background-size: 100% 100%;
 		background-position: center center;
-		background-size: 200px 260px;
 	}
 
 	.source,
 	.target{
-		background: url('../../resources/mask-target.jpg') center center;
+		background-image: url('../../resources/mask-target.jpg');
+		background-position:  center center;
 		background-size: cover;
 	}
 
 	.target{
 		-webkit-mask: url('../../resources/mask-splatter.png');
-		// mask-source-type: luminance;
+		mask-source-type: luminance;
 		-webkit-mask-position: center center;
-		-webkit-mask-size: 200px 260px;
+		-webkit-mask-size: 100% 100%;
+	}
+
+	&[data-state="1"]{
+		.container{
+			opacity: 1;
+		}
+		.container:nth-child(1){
+			transform: translate(0,0);
+		}
+
+		.container:nth-child(2){
+			transform: translate(320px,0);
+		}
+
+		.container:nth-child(3){
+			transform: translate(640px,0);
+		}
+
+		.mask,
+		.source,
+		.target{
+			transform: rotateY(30deg);
+			transform-delay: 0.2s;
+		}
+	}
+
+	&[data-state="2"]{
+		@extend [data-state="1"];
+
+		.mask{
+			background-image: url('../../resources/mask-splatter-simulation.png');
+		}
+	}
+
+	&[data-state="3"]{
+		@extend [data-state="2"];
+
+		.mask{
+			background-image: url('../../resources/mask-splatter.jpg');
+		}
+	}
+
+	&[data-state="4"]{
+		@extend [data-state="3"];
+
+		.mask{
+			background-image: url('../../resources/mask-splatter.jpg');
+		}
+
+		.mask,
+		.source,
+		.target{
+			transform: rotateY(0deg);
+		}
+
+		.container:nth-child(1){
+			transform: translate(-320px,0);
+			opacity: 0;
+		}
+
+		.container:nth-child(2){
+			transform: translate(140px,0);
+		}
+
+		.container:nth-child(3){
+			transform: translate(500px,0);
+		}
+	}
+
+	&[data-state="5"]{
+		@extend [data-state="4"];
+
+		.mask,
+		.target{
+			transition-duration: 3s;
+			transition-timing-function: ease-in-out;
+		}
+
+		.mask{
+			background-size: 50px 80px;
+		}
+
+		.target{
+			-webkit-mask-size: 50px 80px;
+		}
+	}
+
+	&[data-state="6"]{
+		@extend [data-state="5"];
+
+		.mask{
+			background-size: 100% 100%;
+		}
+
+		.target{
+			-webkit-mask-size: 100% 100%;
+		}
 	}
 }
