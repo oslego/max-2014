@@ -650,7 +650,7 @@
 				</section>
 
 				<section id="masking">
-					<div class="masking-illustration" data-state=0 data-max-state=6>
+					<div class="masking-illustration" data-state-trigger data-state=0 data-max-state=6>
 						<div class="container">
 							<div class="source"></div>
 						</div>
@@ -675,7 +675,11 @@
 				</section>
 
 				<section>
-					// basic demo img + picture (texture)
+					<ul class="demo--texture" data-state-trigger data-state=0 data-max-state=4>
+						<li class="masking-texture">Textures</li>
+						<li class="masking-texture">for</li>
+						<li class="masking-texture">Everything!</li>
+					</ul>
 				</section>
 
 				<section>
@@ -1009,6 +1013,7 @@
 						}
 					});
 
+					// TODO: move to data-state-trigger behavior
 					document.addEventListener('click', function(e){
 						if (e.target.classList.contains('clip--text')){
 							var clip = document.querySelector('#clip-text text');
@@ -1017,17 +1022,15 @@
 					});
 
 					document.addEventListener('click', function(e){
-						var slide = Reveal.getCurrentSlide();
+						if (e.target.dataset && e.target.dataset.stateTrigger !== undefined){
+								var target = e.target;
+								var currStateIndex = parseInt(target.dataset.state, 10);
+								var maxStateIndex = parseInt(target.dataset.maxState, 10);
+								var stateIndex = (currStateIndex === maxStateIndex) ? 0 : currStateIndex + 1;
 
-						if (slide.id === 'masking'){
-							var demoHost = document.querySelector('.masking-illustration');
-							var currStateIndex = parseInt(demoHost.dataset.state, 10);
-							var maxStateIndex = parseInt(demoHost.dataset.maxState, 10);
-							var stateIndex = (currStateIndex === maxStateIndex) ? 0 : currStateIndex + 1;
-
-							demoHost.dataset.state = stateIndex
+								target.dataset.state = stateIndex;
 						}
-					});
+					})
 
 					Reveal.addEventListener('slidechanged', function(event){
 						if (clipEditor){
