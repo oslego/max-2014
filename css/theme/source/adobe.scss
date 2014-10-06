@@ -193,6 +193,19 @@ $codeFont: 'Source Code Pro', monotype;
 		font-family: $codeFont;
 		font-weight: 700;
 	}
+
+	blockquote{
+		text-align: left;
+		font-size: 160%;
+		line-height: 130%;
+		padding: 1em 0.5em;
+
+		span{
+			padding-top: 1em;
+			display: block;
+			text-align: right;
+		}
+	}
 }
 
 .support-matrix{
