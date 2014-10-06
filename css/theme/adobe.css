@@ -348,6 +348,94 @@ body {
     height: 6em;
     border-radius: 50%; }
 
+/* styles for clipping vs masking illustrations */
+.clip-vs-mask {
+  width: 960px;
+  height: 450px; }
+
+.clip-concept,
+.mask-concept {
+  width: 450px;
+  height: 450px;
+  position: absolute; }
+
+.clip-concept {
+  top: 0;
+  left: 0; }
+
+.mask-concept {
+  top: 0;
+  right: 0; }
+
+.cp-shape--cutout {
+  transition: stroke-dashoffset 1.5s ease-in-out;
+  stroke-dasharray: 628px, 628px;
+  stroke-dashoffset: 628px;
+  transform-origin: 50% 50%;
+  fill-opacity: 0; }
+
+.cp-shape--cutout:hover {
+  stroke-dashoffset: 0; }
+
+.cp-shape--cutout:hover ~ .cp-scissors {
+  transform: rotate(360deg); }
+
+.cp-scissors {
+  transition: transform 1.5s ease-in-out;
+  fill: orange; }
+
+.cp-shape--dash {
+  fill-opacity: 0;
+  stroke-dasharray: 10px, 10px; }
+
+.label {
+  text-transform: uppercase;
+  font-family: 'Montserrat' sans-serif;
+  text-align: center;
+  font-size: 1em; }
+
+.cp-label {
+  fill: white; }
+
+.cp-shape {
+  stroke: white;
+  stroke-width: 4; }
+
+.reveal .mk-label {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: 'Montserrat' sans-serif; }
+
+.mk-shape {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%; }
+
+.mk-shape--top {
+  background: #685C79;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(145deg, black 40%, rgba(0, 0, 0, 0) 45%);
+  -webkit-mask-size: 850px 850px;
+  transition: all 1.2s ease-in-out; }
+  .mk-shape--top .mk-label {
+    color: white; }
+
+.mk-shape--top:hover {
+  -webkit-mask-size: 450px 450px; }
+
+.reveal .mk-shape--base {
+  box-sizing: border-box;
+  background: none;
+  z-index: 1;
+  border: 8px solid orange; }
+  .reveal .mk-shape--base .mk-label {
+    color: orange; }
+
+/* styles for interactive clipping */
 .clip-surface {
   background: url("../../resources/pattern-science.png") left top;
   height: 500px; }

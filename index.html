@@ -424,8 +424,65 @@
 					</aside>
 				</section>
 
-				<section>
-					<h2>clipping vs masking</h2>
+				<section id="clipping">
+					<div class="clip-vs-mask">
+						<div class="clip-concept">
+							<svg width="450" height="450">
+								<title id="title">Illustration of the clip-path property with an animation of scissors cutting along a dotted line.</title>
+
+								<g transform="translate(204, 204) scale(2)">
+
+									<text y="7" text-anchor="middle" class="label cp-label">clipping</text>
+									<circle r="100" cx="0" cy="0" id="dash" class="cp-shape cp-shape--dash" />
+									<circle r="100" cx="0" cy="0" id="circle" class="cp-shape cp-shape--cutout" />
+
+
+									<g width="100" height="100" class="cp-scissors">
+										<g transform="scale(0.45) translate(180 -60)">
+											<path d="M80.339,0.695c-6.391-2.339-14.008,1.462-16.283,7.897c-3.294,7.356-4.984,17.072-15.635,25.413l-4.474,3.504l-3.995-3.143
+												C29.321,26.004,27.654,16.283,24.375,8.919C22.115,2.479,14.505-1.34,8.109,0.985c-6.463,1.905-9.367,9.668-7.6,15.855
+												c1.323,6.312,7.748,11.555,14.051,10.113c6.564-1.5,5.376-3.651,7.861-4.359c3.177-0.906,5.182,8.649,14.531,21.74l0.276,0.383
+												L11.96,80.778C8.797,85.997,6.899,92.941,11,99.552l33.031-45.436L77.23,100c4.116-6.603,2.232-13.551-0.92-18.778l-25.451-36.5
+												l0.542-0.746c9.378-13.067,11.405-22.622,14.58-21.708c2.482,0.715,1.289,2.862,7.851,4.378c6.3,1.456,12.735-3.773,14.072-10.082
+												C89.685,10.383,86.798,2.612,80.339,0.695z M21.739,14.741c0.001,7.334-9.644,10.664-15.081,5.158
+												c-3.721-3.771-3.74-11.542,1.342-14.23C14.041,1.831,22.14,7.993,21.739,14.741z M81.748,19.61
+												c-5.446,5.494-15.086,2.143-15.067-5.191c-0.387-6.746,7.726-12.894,13.757-9.042C85.514,8.077,85.478,15.848,81.748,19.61z"/>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</div>
+
+						<div class="mask-concept">
+
+							<div class="mk-container">
+								<div class="mk-shape mk-shape--base">
+									<div class="label mk-label">Masking</div>
+								</div>
+
+								<div class="mk-shape mk-shape--top">
+									<div class="label mk-label">Masking</div>
+								</div>
+							</div>
+
+							<!-- <svg width="450" height="450">
+								<title id="title">Illustration of the mask property.</title>
+
+								<defs>
+									<mask id="mkmask" mask-type="luminance">
+										<circle r="100" x="0" y="0" fill="#fff">
+									</mask>
+								</defs>
+
+								<g transform="translate(204, 204) scale(2)">
+									<circle r="100" cx="0" cy="0" id="circle" class="mk-shape-base" mask="url(#mkmask)" />
+									<circle r="100" cx="0" cy="0" id="circle" class="mk-shape" />
+									<text y="7" text-anchor="middle" class="label mk-label">masking</text>
+								</g>
+
+							</svg> -->
+						</div>
+					</div>
 				</section>
 
 				<section>
