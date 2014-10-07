@@ -129,8 +129,8 @@ body {
 .reveal .slide-number {
   color: #13daec; }
 
-.vignette45deg .reveal .state-background {
-  background-image: -webkit-linear-gradient(225deg, rgba(0, 0, 0, 0) 50%, black);
+.vignette .reveal .state-background {
+  background-image: -webkit-linear-gradient(240deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8));
   background-size: cover; }
 
 .workaround .reveal .state-background {
@@ -144,10 +144,6 @@ body {
 .workaround .reveal h2 {
   color: black; }
 
-.svg-scene .reveal .state-background {
-  background-image: linear-gradient(#8e2525, #8e2525), url("../../resources/texture-wall.png");
-  background-blend-mode: multiply;
-  background-size: cover; }
 .svg-scene .reveal section {
   text-align: left; }
 .svg-scene .reveal #svg {
@@ -174,7 +170,7 @@ body {
     -webkit-animation: headbob 1.6s infinite ease-out;
     -webkit-animation-delay: 3s; }
 
-@keyframes headbob {
+@-webkit-keyframes headbob {
   25% {
     transform: translate(-1px, 2px); }
 

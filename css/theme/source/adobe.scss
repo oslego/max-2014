@@ -35,8 +35,8 @@ $codeFont: 'Source Code Pro', monotype;
 @import "../template/theme";
 // ---------------------------------------------
 
-.vignette45deg .reveal .state-background{
-  background-image: -webkit-linear-gradient(225deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1));
+.vignette .reveal .state-background{
+  background-image: -webkit-linear-gradient(240deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.8));
   background-size: cover;
 }
 
@@ -59,12 +59,6 @@ $codeFont: 'Source Code Pro', monotype;
 }
 
 .svg-scene .reveal{
-	.state-background{
-		background-image: linear-gradient(rgb(142, 37, 37), rgb(142, 37, 37)), url('../../resources/texture-wall.png');
-		background-blend-mode: multiply;
-		background-size: cover;
-	}
-
 	section {
 		text-align: left;
 	}
@@ -109,7 +103,7 @@ $codeFont: 'Source Code Pro', monotype;
 	}
 }
 
-@keyframes headbob{
+@-webkit-keyframes headbob{
 	25%{
 		transform: translate(-1px, 2px);
 	}
