@@ -246,6 +246,19 @@ body {
   color: #685C79;
   color: orange; }
 
+.reveal ul.quiz {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  list-style: upper-alpha;
+  margin: 0;
+  padding: 0; }
+  .reveal ul.quiz li {
+    font-size: 2.5em;
+    margin-bottom: 0.75em;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    text-shadow: 0 0 20px black; }
+
 .support-matrix {
   border-collapse: collapse;
   border-spacing: 0;
