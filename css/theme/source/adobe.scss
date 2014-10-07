@@ -205,6 +205,19 @@ $codeFont: 'Source Code Pro', monotype;
 			text-align: right;
 		}
 	}
+
+	.intro{
+		h1{
+			font-size: 2.5em;
+			line-height: 1.1em;
+			margin-bottom: 0.5em;
+		}
+
+		h3{
+			color: #685C79;
+			color: orange;
+		}
+	}
 }
 
 .support-matrix{
