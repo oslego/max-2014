@@ -457,6 +457,14 @@ body {
   right: 250px;
   transition-delay: .1s; }
 
+.reveal section.survey {
+  text-align: left; }
+  .reveal section.survey img {
+    float: left;
+    margin-right: 2em; }
+  .reveal section.survey h1 {
+    margin-top: 25%; }
+
 /* styles for interactive clipping */
 .clip-surface {
   background: url("../../resources/pattern-science.png") left top;

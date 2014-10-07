@@ -523,6 +523,19 @@ $codeFont: 'Source Code Pro', monotype;
 	}
 }
 
+.reveal section.survey{
+	text-align: left;
+
+	img{
+		float: left;
+		margin-right: 2em;
+	}
+
+	h1{
+		margin-top: 25%;
+	}
+}
+
 
 /* styles for interactive clipping */
 
