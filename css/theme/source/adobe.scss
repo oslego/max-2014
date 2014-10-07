@@ -103,8 +103,8 @@ $codeFont: 'Source Code Pro', monotype;
 		transform: scale(3.5);
 
 		.deer-head{
-			animation: headbob 1.6s infinite ease-out;
-			animation-delay: 3s;
+			-webkit-animation: headbob 1.6s infinite ease-out;
+			-webkit-animation-delay: 3s;
 		}
 	}
 }
@@ -162,7 +162,6 @@ $codeFont: 'Source Code Pro', monotype;
 	.slides section .fragment.current-visible.current-fragment{
 		position: relative;
 	}
-
 
 	.demo {
 		p{
@@ -489,6 +488,40 @@ $codeFont: 'Source Code Pro', monotype;
 	}
 }
 
+.reveal section .fragment.explain-clip,
+.reveal section .fragment.explain-mask{
+	opacity: 1;
+}
+
+.mask-concept,
+.clip-concept{
+	transition: all 1s ease-in-out;
+}
+
+.reveal section .fragment.explain-clip.current-fragment{
+	.mask-concept{
+		opacity: 0;
+		right: -400px;
+	}
+
+	.clip-concept{
+		left: 300px;
+		transition-delay: .1s;
+	}
+}
+
+.reveal section .fragment.explain-mask.current-fragment{
+	.clip-concept{
+		opacity: 0;
+		left: -400px;
+	}
+
+	.mask-concept{
+		right: 250px;
+		// left: 300px;
+		transition-delay: .1s;
+	}
+}
 
 
 /* styles for interactive clipping */

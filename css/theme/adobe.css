@@ -171,8 +171,8 @@ body {
 .svg-scene .reveal .demo.fragment.visible {
   transform: scale(3.5); }
   .svg-scene .reveal .demo.fragment.visible .deer-head {
-    animation: headbob 1.6s infinite ease-out;
-    animation-delay: 3s; }
+    -webkit-animation: headbob 1.6s infinite ease-out;
+    -webkit-animation-delay: 3s; }
 
 @keyframes headbob {
   25% {
@@ -434,6 +434,28 @@ body {
   border: 8px solid orange; }
   .reveal .mk-shape--base .mk-label {
     color: orange; }
+
+.reveal section .fragment.explain-clip,
+.reveal section .fragment.explain-mask {
+  opacity: 1; }
+
+.mask-concept,
+.clip-concept {
+  transition: all 1s ease-in-out; }
+
+.reveal section .fragment.explain-clip.current-fragment .mask-concept {
+  opacity: 0;
+  right: -400px; }
+.reveal section .fragment.explain-clip.current-fragment .clip-concept {
+  left: 300px;
+  transition-delay: .1s; }
+
+.reveal section .fragment.explain-mask.current-fragment .clip-concept {
+  opacity: 0;
+  left: -400px; }
+.reveal section .fragment.explain-mask.current-fragment .mask-concept {
+  right: 250px;
+  transition-delay: .1s; }
 
 /* styles for interactive clipping */
 .clip-surface {
