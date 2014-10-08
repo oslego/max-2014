@@ -2,11 +2,13 @@
 
 Slides for my talk at [Adobe MAX](http://max.adobe.com/) 2014.
 
-This is an custom interactive slide deck meant to be shown on stage. It works best in Google Chrome.
+This is a custom interactive slide deck meant to be shown on stage. It works as expected in Google Chrome.
+
+![Screenshot of slides](screenshot.png)
 
 ## Resources:
 
-Start on [webplatform.adobe.com](http://webplatform.adobe.com/);
+Start on [webplatform.adobe.com](http://webplatform.adobe.com/).
 
 **CSS Shapes**
 - [Getting started with CSS Shapes](http://www.html5rocks.com/en/tutorials/shapes/getting-started/)
