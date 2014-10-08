@@ -546,7 +546,7 @@ $codeFont: 'Source Code Pro', monotype;
 	}
 }
 
-.reveal section.survey{
+.reveal section.left-aligned{
 	text-align: left;
 
 	img{
@@ -555,7 +555,26 @@ $codeFont: 'Source Code Pro', monotype;
 	}
 
 	h1{
-		margin-top: 25%;
+		// margin-top: 25%;
+	}
+}
+
+.reveal section.bio{
+
+	img{
+		width: 350px;
+		float: left;
+		-webkit-clip-path: circle(175px at 175px 200px);
+	}
+
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li{
+		margin-bottom: 0.3em;
 	}
 }
 
